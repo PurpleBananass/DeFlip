@@ -222,7 +222,6 @@ captures each stage explicitly:
       --model-type RandomForest \
       --explainer-type LIME-HPO \
       --project all \
-      --search-strategy confidence
   ```
 
 - Summarize flip experiments and DeFlip counterfactuals for plotting:
