@@ -15,9 +15,8 @@ code layout, and orchestrate common tasks from a single command-line interface.
 - `SDP/` – Training, preprocessing, and explainer code for the SDP study. Paths live in
   `SDP/hyparams.py`.
 - `plot_rq1.py`, `plot_rq2.py`, `plot_rq3.py` – Plotting utilities used by the paper.
-- `replication_cli.py` – A new orchestration CLI that wraps the key pipelines for both
+- `replication_cli.py` – An orchestration CLI that wraps the key pipelines for both
   studies.
-- `requirements.txt` – Python dependencies for running the experiments.
 
 ## Environment Setup
 
