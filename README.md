@@ -38,7 +38,7 @@ point to your local copies before running the pipelines. Common locations includ
 - **SDP:**
   - Original per-project CSVs: `SDP/hyparams.py::ORIGINAL_DATASET`
   - Preprocessed release splits: `SDP/hyparams.py::RELEASE_DATASET` (defaults to
-    `./eval-actionable-guidance/Dataset/release_dataset` in the current repo state)
+    `./SDP/Dataset/release_dataset` in the current repo state)
 
 ## Study script reference
 
@@ -57,17 +57,15 @@ or through the orchestration CLI shown later.
 5. `plan_closest.py` – Derive minimum-change plans.
 6. `flip_exp.py` – Apply plans to test true positives and measure flips.
 7. `flip_closest.py` – Flip evaluation restricted to closest/minimum plans.
-8. `cf.py` (implemented here as `counterfactual_generation.py`) – Runs modified NICE
+8. `cf.py` - Runs modified NICE
    and the DeFlip algorithm to generate counterfactuals.
-9. `evaluate.py` / `evaluate_closest.py` (implemented here as `evaluate_final.py` and
-   `evaluate_closest.py`) – RQ1–RQ3 + implications aggregation for default and
+9. `evaluate.py` / `evaluate_closest.py` – RQ1–RQ3 + implications aggregation for default and
    closest-plan pipelines.
 
 ### SDP
 
 1. `preprocess.py` – Preprocess with AutoSpearman feature selection.
-2. `train_models.py` – Train RandomForest/XGBoost/SVM models (LightGBM/CatBoost via
-   `train_models_new.py`).
+2. `train_models.py` – Train RandomForest/XGBoost/SVM models.
 3. `run_explainer.py` – Run LIME/LIME-HPO/TimeLIME/SQAPlanner explainers.
 4. `mining_sqa_rules.py` – BigML rule mining step required before SQAPlanner plans
    (uses `.env` with `BIGML_USERNAME` and `BIGML_API_KEY`).
@@ -75,10 +73,9 @@ or through the orchestration CLI shown later.
    `plans_closest/`) and compute importance ratios when requested.
 6. `flip_exp.py` – Flip simulation over generated plans.
 7. `flip_closest.py` – Flip simulation restricted to closest plans.
-8. `cf.py` (implemented here as `niceml.py`) – Runs modified NICE and the DeFlip
+8. `cf.py` – Runs modified NICE and the DeFlip
    algorithm to generate counterfactuals.
-9. `evaluate.py` / `evaluate_closest.py` (implemented here as `evaluate_cf.py` and
-   closest-plan evaluation paths in `flip_closest.py`) – RQ1–RQ3 + implications
+9. `evaluate.py` / `evaluate_closest.py` – RQ1–RQ3 + implications
    aggregation for full and closest-plan pipelines.
 
 ## Command-Line Orchestration
