@@ -3,10 +3,7 @@
 This repository contains the experiment code for the DeFlip study across two settings:
 
 - **JIT-SDP** (`JIT-SDP/`): Just-in-time defect prediction.
-- **SDP** (`SDP/`): Traditional static defect prediction.
-
-The goal of this cleanup is to make it easier to reproduce the experiments, understand the
-code layout, and orchestrate common tasks from a single command-line interface.
+- **SDP** (`SDP/`): Software defect prediction.
 
 ## Repository Layout
 
