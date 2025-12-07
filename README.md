@@ -132,7 +132,6 @@ command to see available options.
       --model-type RandomForest \
       --explainer-type LIME-HPO \
       --project all \
-      --search-strategy confidence
   ```
 
 - Summarize flip experiments for RQ tables/plots (defaults to running all RQs; add
@@ -185,7 +184,7 @@ captures each stage explicitly:
 
   ```bash
   python replication_cli.py sdp mine-rules \
-      --model-type RandomForest \
+      --model-type SQAPlanner \
       --search-strategy confidence \
       --project activemq@2
   ```
@@ -199,7 +198,6 @@ captures each stage explicitly:
       --model-type RandomForest \
       --explainer-type LIME-HPO \
       --project all \
-      --search-strategy confidence
   ```
 
   Use `--compute-importance` to compute feature-importance ratios instead of
@@ -258,7 +256,7 @@ pipelines (see the constants in the script bodies for expected locations).
 - For quick smoke tests, you can point the dataset paths to a reduced sample and run the
   CLI with the same commands shown above.
 - The overall workflow for actionability is: (1) run explainers, (2) generate plans using
-  the new `plan-actions` commands, and (3) evaluate/flip using the study-specific scripts
+  the new `plan-actions` commands, and (3) flip simulation (4) evaluate using the study-specific scripts
   such as `SDP/evaluate_cf.py` or the `evaluate_*` utilities under `JIT-SDP/`. Some
   explainers require extra manual steps (e.g., SQAPlanner needs BigML credentials for
   rule mining via `SDP/mining_sqa_rules.py`). Refer to the inline comments inside each
